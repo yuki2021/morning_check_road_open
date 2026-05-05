@@ -93,4 +93,4 @@ GitHub Mobile アプリをインストールすると、ショートカットア
 
 ## 関連記事
 
-- Zenn: （記事URL）
+- Zenn: https://zenn.dev/yuki_2021/articles/9badb6bf2409c5
