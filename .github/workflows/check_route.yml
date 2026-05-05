@@ -1,0 +1,27 @@
+name: 朝の通勤ルートチェック
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - run: python check_route.py
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          HOME_ADDRESS: ${{ secrets.HOME_ADDRESS }}
+          WORK_ADDRESS: ${{ secrets.WORK_ADDRESS }}
+          ROUTE1: ${{ secrets.ROUTE1 }}
+          ROUTE2: ${{ secrets.ROUTE2 }}
+          ROUTE3: ${{ secrets.ROUTE3 }}
+          ROUTE4: ${{ secrets.ROUTE4 }}

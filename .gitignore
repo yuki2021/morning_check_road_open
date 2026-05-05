@@ -1,0 +1,6 @@
+.env
+secrets_setup.md
+__pycache__/
+*.pyc
+.venv/
+zenn_article.md
